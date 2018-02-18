@@ -76,7 +76,7 @@
         let audio = new Audio('lose.ogg');
         audio.play();
         gameState = "lost";
-        setTimeout(() => startLevel(currentLevelIndex ), 3000);
+        setTimeout(() => startLevel(currentLevelIndex ), 1000);
     }
 
 
