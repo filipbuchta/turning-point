@@ -73,7 +73,7 @@
     }
 
     function lose() {
-        let audio = new Audio('lose.ogg');
+        let audio = new Audio('lose.mp3');
         audio.play();
         gameState = "lost";
         setTimeout(() => startLevel(currentLevelIndex ), 1000);
@@ -176,8 +176,13 @@
 
         if (gameState == "lost") {
             let txt = "You have lost";
-            drawOutlined(context, "You have lost",canvas.width / 2-70 ,canvas.height / 2);
 
+            for (let i = 0; i < 10000; i++) {
+                context.clearRect(
+                    Math.floor(Math.random() * canvas.clientWidth),
+                    Math.floor(Math.random() * canvas.clientHeight), 2, 2);
+            }
+            drawOutlined(context, "You have lost",canvas.width / 2-70 ,canvas.height / 2);
             return;
         } else if (gameState == "win") {
             let txt = "You have won";
